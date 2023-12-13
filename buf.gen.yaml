@@ -1,0 +1,16 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/snowmerak/common
+plugins:
+  - plugin: buf.build/protocolbuffers/go:v1.31.0
+    out: lib/src/go
+    opt: paths=source_relative
+  - plugin: buf.build/grpc/go:v1.3.0
+    out: lib/src/go
+    opt: paths=source_relative
+  - plugin: buf.build/community/timostamm-protobuf-ts:v2.9.3
+    out: lib/src/ts
+  - plugin: buf.build/protocolbuffers/dart:v21.1.2
+    out: lib/src/dart
